@@ -103,6 +103,33 @@ FROM "sloba_test"."adventure_works_purchase_orders"
 ORDER BY 1, 2, 3, 4
 ;
 
+
+CREATE TEMP TABLE "tmp_test_previous_difference"
+AS
+SELECT DISTINCT "sales_region",
+                "product_category",
+                "product_name",
+                "unitprice",
+                "cost_increase",
+                a."unit_cost",
+                "cost_perc_increase",
+                "difference",
+                "unitprice" + "unitprice" * "cost_perc_increase"                AS "corrected_price",
+                ("corrected_price" -a."unit_cost") / a."unit_cost"              AS "corrected_difference",
+                MAX("difference") AS "previous_difference"
+FROM "tmp_analyze_cost_change" a
+         INNER JOIN "tmp_cost_and_price_difference" b USING ("sales_region",
+                                                             "product_category",
+                                                             "product_name")
+GROUP BY 1,2,3,4,5,6,7,8,9
+ORDER BY 1, 2, 3;
+
+--used query to check if previous difference between cost and price will be the same if we apply cost increase to create new price
+-- SELECT * FROM "tmp_test_previous_difference"
+-- ORDER BY 1, 2, 3
+-- LIMIT 100;
+
+
 --use discount to create discount_price, lost money because not increased, and expected profit if the price was up
 DROP TABLE IF EXISTS "sloba_test"."discount_counted";
 CREATE TABLE "sloba_test"."discount_counted"
@@ -148,8 +175,8 @@ FROM (
 GROUP BY 1, 2;
 
 --create final profit based on shipping costs
-DROP TABLE IF EXISTS "sloba_test"."tableau_analyze";
-CREATE TABLE "sloba_test"."tableau_analyze"
+DROP TABLE IF EXISTS "sloba_test"."tableau_analyse";
+CREATE TABLE "sloba_test"."tableau_analyse"
 AS
 SELECT "sales_region",
        "orderdate",
