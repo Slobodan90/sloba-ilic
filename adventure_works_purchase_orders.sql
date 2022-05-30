@@ -1,5 +1,4 @@
 
-
 DROP TABLE IF EXISTS "sloba_test"."adventure_works_purchase_orders";
 CREATE TABLE "sloba_test"."adventure_works_purchase_orders"
 (
@@ -33,7 +32,7 @@ CREATE TABLE "sloba_test"."adventure_works_purchase_orders"
     SORTKEY ("Sales_Region", "Product_Category", "OrderDate")
 ;
 
---I used copy command to get the data from S3 to redshift table
+--I used copy command to get the data from S3 to redshift table --
 COPY "sloba_test"."adventure_works_purchase_orders"
     FROM 's3://mybucket/adventure_works_purchase_orders.csv'
     CREDENTIALS 'xxxxx-xxxxx'
