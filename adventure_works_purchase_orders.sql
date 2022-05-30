@@ -188,3 +188,5 @@ SELECT "sales_region",
        "current_profit" - "total_shipping_cost"  AS "current_total_profit"
 FROM "tmp_agregated" a
          LEFT JOIN "tmp_shipping_costs" b USING ("sales_region", "orderdate");
+
+--end line
