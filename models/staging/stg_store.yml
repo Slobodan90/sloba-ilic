@@ -1,0 +1,30 @@
+models:
+  - name: stg_store
+    columns:
+      - name: id
+        description: Unique Id of the store
+        data_type: integer 
+        data_tests:
+          - not_null
+          - unique
+      - name: name
+        description: Store name
+        data_type: varchar(100) 
+      - name: address
+        description: Store address
+        data_type: varchar(200) 
+      - name: city
+        description: City where store is located
+        data_type: varchar(50) 
+      - name: country
+        description: Country where store is located
+        data_type: varchar(50) 
+      - name: created_at
+        description: Time when contract started with sumup?
+        data_type: timestamp
+      - name: typology
+        description: Type/Category of the business
+        data_type: varchar(50) 
+      - name: customer_id
+        description: Id of customer who owns business and uses pos device from sumup
+        data_type: integer

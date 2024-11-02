@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: sumup
+    schema: slobodan_ilic
+    description: Store, Device and transactions informations for SumUp
+    freshness:
+      warn_after:
+        count: 24
+        period: hour
+    tables:
+      - name: transactions
+        description: Transaction table with products sold informations
+      - name: store
+        description: Store informations for customer(client) and locations
+      - name: devices
+        description: Mapping table for device type and store where device is used

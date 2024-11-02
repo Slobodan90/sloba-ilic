@@ -1,0 +1,8 @@
+models:
+  - name: top_10_products
+    description: Model to find top 10 products per total transactions
+    columns:
+      - name: product_name
+        description: Name of the product
+      - name: total_transactions
+        description: Total Transactions per product name

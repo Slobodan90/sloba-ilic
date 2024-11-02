@@ -1,0 +1,36 @@
+config-version: 2
+
+name: "sloba_ilic"
+version: "3.0.0"
+require-dbt-version: ">=1.5.0"
+
+dbt-cloud:
+  project-id: 70403103975379
+
+profile: bi_sloba_test
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["data-tests"]
+seed-paths: ["seeds", "csv_data"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+vars:
+  "dbt_date:time_zone": "America/Los_Angeles"
+
+seeds:
+  sloba_ilic:
+    +schema: raw
+
+models:
+  sloba_ilic:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table

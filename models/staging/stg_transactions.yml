@@ -1,0 +1,39 @@
+models:
+  - name: stg_transactions
+    columns:
+      - name: id
+        description: The unique key for each transaction.
+        data_type: integer 
+        data_tests:
+          - not_null
+          - unique
+      - name: device_id
+        description: Id of the device used in store for tranasction
+        data_type: integer 
+      - name: product_name
+        description: Name of the product sold
+        data_type: varchar(100) 
+      - name: product_sku
+        description: A unique identifier for tracking inventory
+        data_type: varchar(100) 
+      - name: category_name
+        description: Product Category name
+        data_type: varchar(100) 
+      - name: amount
+        description: Transaction Amount
+        data_type: double 
+      - name: status
+        description: Transaction Status
+        data_type: varchar(20) 
+      - name: card_number
+        description: Bank Card number
+        data_type: varchar(200) 
+      - name: cvv
+        description: CVV of bank card
+        data_type: integer 
+      - name: created_at
+        description: Transaction created time
+        data_type: timestamp 
+      - name: happened_at
+        description: Unsure about this timestamp
+        data_type: timestamp 

@@ -1,0 +1,15 @@
+models:
+  - name: device_shares
+    description: Combined model for generating answers and doing analysis over provided sample
+    columns:
+      - name: device_type
+        description: Id of the device type
+        data_tests:
+          - not_null
+          - unique
+      - name: transactions_per_type
+        description: Total Transactions per device type
+      - name: total_transactions
+        description: Total Transactions overall for all device types to get a share
+      - name: percentage_of_transactions
+        description: Share of all acepted transactions per device type

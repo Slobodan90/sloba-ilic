@@ -1,0 +1,35 @@
+models:
+  - name: store_transaction_data
+    description: Combined model for generating answers and doing analysis over provided sample
+    columns:
+      - name: transaction_id
+        description: The unique key of transaction_id
+        data_tests:
+          - not_null
+          - unique
+      - name: device_id
+        description: Id of the device
+      - name: product_name
+        description: Name of the product sold
+      - name: product_sku
+        description: A unique identifier for tracking inventory
+      - name: amount
+        description: Amount of the purchase
+      - name: status
+        description: The sum of all the pre-tax subtotals of every order a customer has placed.
+      - name: transaction_created_at
+        description: Time of the transaction
+      - name: device_type
+        description: There are 5 different device types
+      - name: store_id
+        description: Id of the store
+      - name: store_name
+        description: Store name
+      - name: store_city
+        description: City where store is located
+      - name: store_country
+        description: Country where store is located
+      - name: typology
+        description: Type/Category of the business
+      - name: customer_id
+        description: Id of customer who owns business and uses pos device from sumup

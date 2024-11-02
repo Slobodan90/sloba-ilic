@@ -1,0 +1,14 @@
+models:
+  - name: avg_transaction_amount
+    description: Combined model for generating answers and doing analysis over provided sample
+    columns:
+      - name: store_country
+        description: Country name where store is located
+      - name: typology
+        description: Type/Category of the business 
+      - name: total_transactions
+        description: Total Transactions per Country and Typologu
+      - name: total_amount
+        description: Total amount per Country and Typologu
+      - name: avg_amount
+        description: AVG amount per Country and Typologu

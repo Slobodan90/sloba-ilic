@@ -1,0 +1,14 @@
+version: "1"
+context:
+  active-host: "ug194.us1.dbt.com"
+  active-project: "70403103975379"
+projects:
+  - project-name: "Analytics"
+    project-id: "70403103975379"
+    account-name: "Talentree"
+    account-id: "70403103964157"
+    account-host: "ug194.us1.dbt.com"
+    token-name: "cloud-cli-ecf3"
+    token-value: "dbtu_H6cbeSQXSnrqaj7kum2kWbdSbUDhGiCsTe-dUl3aDuSWk8Ogn4"
+
+

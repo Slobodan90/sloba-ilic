@@ -1,0 +1,15 @@
+models:
+  - name: stg_devices
+    columns:
+      - name: id
+        description: The unique key for each device.
+        data_type: integer 
+        data_tests:
+          - not_null
+          - unique
+      - name: type
+        description: The device type id
+        data_type: integer 
+      - name: store_id
+        description: Store id whrere device is used
+        data_type: integer 

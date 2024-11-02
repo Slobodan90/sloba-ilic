@@ -1,0 +1,11 @@
+models:
+  - name: store_transaction_data
+    description: Model to find top 10 products per total transactions
+    columns:
+      - name: store_name
+        description: Name of the store
+        data_tests:
+          - not_null
+          - unique
+      - name: total_amount
+        description: Total accepted transaction amount

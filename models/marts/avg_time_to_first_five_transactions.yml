@@ -1,0 +1,6 @@
+models:
+  - name: avg_days_till_fifth_transaction
+    description: model to find avg time per store to get to 5 accepted transactions
+    columns:
+      - name: avg_days_till_fifth_transaction
+        description: avg time in days
